@@ -1,0 +1,68 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-rename-the-app-brand-from-quick-delvery-to-quick-d-across-the-web-frontend-updating-all-user-facing-text-page-titles-headings-marketing-copy-where-the-brand-name-appears-and-footer-copyright-so-the-brand-is-consistently-shown-as-quick-d",
+      "featureTitle": "Rename the app brand from \"Quick-Delvery\" to \"QUICK-D\" across the web frontend, updating all user-facing text (page titles, headings, marketing copy where the brand name appears, and footer copyright) so the brand is consistently shown as \"QUICK-D\".",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/pages/Auth.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/OutOfRadius.tsx",
+        "frontend/src/pages/Splash.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-replace-the-current-logo-used-in-the-app-ui-with-the-new-combined-quick-d-logo-updating-all-places-that-currently-render-assets-generated-quick-delvery-logo-dim-512x512-png-to-use-the-new-generated-combined-logo-asset-and-ensure-alt-text-uses-quick-d",
+      "featureTitle": "Replace the current logo used in the app UI with the new combined QUICK-D logo, updating all places that currently render \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to use the new generated combined logo asset, and ensure alt text uses \"QUICK-D\".",
+      "files": [
+        "frontend/src/pages/Auth.tsx",
+        "frontend/src/pages/Cart.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/ProductDetail.tsx",
+        "frontend/src/pages/Splash.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-new-combined-quick-d-logo-image-file-to-the-frontend-static-assets-under-frontend-public-assets-generated-and-ensure-it-is-used-directly-by-the-frontend-no-backend-routing-for-the-image",
+      "featureTitle": "Add the new combined QUICK-D logo image file to the frontend static assets under frontend/public/assets/generated and ensure it is used directly by the frontend (no backend routing for the image).",
+      "files": [],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

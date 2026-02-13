@@ -1,0 +1,79 @@
+{
+  "kind": "build_request",
+  "title": "Rebrand app to QUICK-D and update logo to combined logo",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "text": "Rename the app brand from \"Quick-Delvery\" to \"QUICK-D\" across the web frontend, updating all user-facing text (page titles, headings, marketing copy where the brand name appears, and footer copyright) so the brand is consistently shown as \"QUICK-D\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "change name as QUICK-D and logo change combain logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The browser tab title displays \"QUICK-D\" (not \"Quick-Delvery\").",
+        "Splash screen title text displays \"QUICK-D\".",
+        "Auth page displays \"Welcome to QUICK-D\" (or equivalent) and does not mention \"Quick-Delvery\".",
+        "Home header brand text and footer copyright display \"QUICK-D\".",
+        "Out-of-radius page message uses \"QUICK-D\" instead of \"Quick-Delvery\".",
+        "A project-wide search in frontend code finds no remaining user-facing occurrences of the old brand name \"Quick-Delvery\" (excluding historical filenames if any)."
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Replace the current logo used in the app UI with the new combined QUICK-D logo, updating all places that currently render \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to use the new generated combined logo asset, and ensure alt text uses \"QUICK-D\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "logo change combain logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Splash, Auth, and Home header logo images render the new combined QUICK-D logo asset (not the old quick-delvery logo).",
+        "Logo image alt text is updated to \"QUICK-D\" where applicable.",
+        "No broken image links occur after the logo swap (all updated paths resolve)."
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Add the new combined QUICK-D logo image file to the frontend static assets under frontend/public/assets/generated and ensure it is used directly by the frontend (no backend routing for the image).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "logo change combain logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The new logo image exists at frontend/public/assets/generated with the exact filename specified in the image requirements.",
+        "The app loads the logo via a direct static path under /assets/generated/ without any backend calls."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (Shadcn UI components are read-only).",
+    "Do not edit immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep backend as a single Motoko actor in backend/main.mo; no backend changes are required for this rebrand unless strictly necessary."
+  ],
+  "nonGoals": [
+    "Implementing new authentication methods or changing Internet Identity behavior.",
+    "Changing app functionality (catalog, cart, checkout, admin features) beyond updating branding text and logo assets.",
+    "Adding push notifications or real-time features."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Combined QUICK-D logo mark on transparent background (quick-d-combined-logo.dim_512x512.png)"
+    ],
+    "edits": []
+  }
+}

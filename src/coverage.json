@@ -1,0 +1,84 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T06:36:49.004Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-22",
+        "summary": "Rename the app brand from \"Quick-Delvery\" to \"QUICK-D\" across the web frontend, updating all user-facing text (page titles, headings, marketing copy where the brand name appears, and footer copyright) so the brand is consistently shown as \"QUICK-D\".",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/Splash.tsx",
+          "frontend/src/pages/Auth.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/OutOfRadius.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/Splash.tsx",
+          "frontend/src/pages/Auth.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/OutOfRadius.tsx"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Replace the current logo used in the app UI with the new combined QUICK-D logo, updating all places that currently render \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to use the new generated combined logo asset, and ensure alt text uses \"QUICK-D\".",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Splash.tsx",
+          "frontend/src/pages/Auth.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/ProductDetail.tsx",
+          "frontend/src/pages/Cart.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Splash.tsx",
+          "frontend/src/pages/Auth.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/ProductDetail.tsx",
+          "frontend/src/pages/Cart.tsx"
+        ]
+      },
+      {
+        "id": "REQ-24",
+        "summary": "Add the new combined QUICK-D logo image file to the frontend static assets under frontend/public/assets/generated and ensure it is used directly by the frontend (no backend routing for the image).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/quick-d-combined-logo.dim_512x512.png"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/quick-d-combined-logo.dim_512x512.png"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/public/assets/generated/quick-d-combined-logo.dim_512x512.png",
+    "frontend/src/components/qd/CartItem.tsx",
+    "frontend/src/components/qd/ProductCard.tsx",
+    "frontend/src/pages/Auth.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/OutOfRadius.tsx",
+    "frontend/src/pages/ProductDetail.tsx",
+    "frontend/src/pages/Splash.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

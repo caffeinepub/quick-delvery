@@ -1,0 +1,97 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebrand frontend to QUICK-D and swap to combined logo",
+  "requirements": [
+    {
+      "id": "REQ-22",
+      "summary": "Rename the app brand from \"Quick-Delvery\" to \"QUICK-D\" across all user-facing frontend text (titles, headings, marketing copy, and footer).",
+      "acceptanceCriteria": [
+        "The browser tab title displays \"QUICK-D\" (not \"Quick-Delvery\").",
+        "Splash screen title text displays \"QUICK-D\".",
+        "Auth page displays \"Welcome to QUICK-D\" (or equivalent) and does not mention \"Quick-Delvery\".",
+        "Home header brand text and footer copyright display \"QUICK-D\".",
+        "Out-of-radius page message uses \"QUICK-D\" instead of \"Quick-Delvery\".",
+        "A project-wide search in frontend code finds no remaining user-facing occurrences of the old brand name \"Quick-Delvery\" (excluding historical filenames if any)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the HTML <title> from \"Quick-Delvery\" to \"QUICK-D\" to ensure the browser tab title matches the new brand."
+        },
+        {
+          "path": "frontend/src/pages/Splash.tsx",
+          "operation": "modify",
+          "description": "Replace user-facing brand text from \"Quick-Delvery\" to \"QUICK-D\" in the splash screen title/marketing copy."
+        },
+        {
+          "path": "frontend/src/pages/Auth.tsx",
+          "operation": "modify",
+          "description": "Update the auth page heading/marketing copy to consistently use \"QUICK-D\" and remove any mention of \"Quick-Delvery\"."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Update the home header brand text and footer copyright to display \"QUICK-D\" instead of \"Quick-Delvery\"."
+        },
+        {
+          "path": "frontend/src/pages/OutOfRadius.tsx",
+          "operation": "modify",
+          "description": "Update out-of-radius messaging text to use \"QUICK-D\" instead of \"Quick-Delvery\"."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Replace all UI logo usages of the old generated logo with the new combined QUICK-D logo and update alt text to \"QUICK-D\".",
+      "acceptanceCriteria": [
+        "Splash, Auth, and Home header logo images render the new combined QUICK-D logo asset (not the old quick-delvery logo).",
+        "Logo image alt text is updated to \"QUICK-D\" where applicable.",
+        "No broken image links occur after the logo swap (all updated paths resolve)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Splash.tsx",
+          "operation": "modify",
+          "description": "Swap the logo image src from \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to \"/assets/generated/quick-d-combined-logo.dim_512x512.png\" and update the img alt text to \"QUICK-D\"."
+        },
+        {
+          "path": "frontend/src/pages/Auth.tsx",
+          "operation": "modify",
+          "description": "Swap the logo image src from \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to \"/assets/generated/quick-d-combined-logo.dim_512x512.png\" and update the img alt text to \"QUICK-D\"."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Swap the header logo image src from \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to \"/assets/generated/quick-d-combined-logo.dim_512x512.png\" and update the img alt text to \"QUICK-D\"."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetail.tsx",
+          "operation": "modify",
+          "description": "Update any fallback usage of the old logo asset path (currently referencing \"/assets/generated/quick-delvery-logo.dim_512x512.png\") to use \"/assets/generated/quick-d-combined-logo.dim_512x512.png\" so no UI still renders the old logo."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Update any fallback usage of the old logo asset path (currently referencing \"/assets/generated/quick-delvery-logo.dim_512x512.png\") to use \"/assets/generated/quick-d-combined-logo.dim_512x512.png\" so no UI still renders the old logo."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Add the new combined QUICK-D logo image file under frontend/public/assets/generated and ensure the frontend loads it as a static asset path.",
+      "acceptanceCriteria": [
+        "The new logo image exists at frontend/public/assets/generated with the exact filename specified in the image requirements.",
+        "The app loads the logo via a direct static path under /assets/generated/ without any backend calls."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/quick-d-combined-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated image asset file \"frontend/public/assets/generated/quick-d-combined-logo.dim_512x512.png\" (transparent background) and ensure it is referenced directly via the static assets path by the UI."
+        }
+      ]
+    }
+  ]
+}

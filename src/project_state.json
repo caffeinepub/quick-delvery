@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Rename project to \"QUICK-D\" (from \"Quick-Delvery\") and update branding/logo accordingly, while continuing to build a production-ready, scalable quick-commerce platform (mobile app + backend API + admin panel) with the existing planned feature set.",
+  "architectural_notes": [
+    "Microservices-ready, scalable architecture with clean separation between mobile app, backend API, and admin panel.",
+    "Tech stack: React Native (TypeScript, Redux Toolkit, React Navigation, Axios, Lottie); Backend Node/Express (TypeScript, MVC, middleware-based error handling); MongoDB/Mongoose; Admin React (Vite) + Tailwind + Chart.js.",
+    "Security requirements: JWT + refresh tokens, RBAC, bcrypt password hashing, Helmet, rate limiting, CORS, input validation, sanitization.",
+    "Location gating: enforce 15km delivery radius using Haversine formula against warehouse/store coordinates.",
+    "DevOps readiness: Docker, environment-based config, free-tier friendly deployment targets (Render/Railway) and production build instructions."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Combined QUICK-D logo mark on transparent background (quick-d-combined-logo.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-the-quick-delvery-frontend-as-a-responsive-mobile-first-web-app-with-a-premium-modern-ui-purple-green-gradient-theme-glassmorphism-accents-rounded-cards-soft-shadows-clean-typography-smooth-page-screen-transitions-skeleton-loaders-and-consistent-empty-error-states-across-all-screens",
+      "title": "Create the Quick-Delvery frontend as a responsive, mobile-first web app with a premium modern UI: purple + green gradient theme, glassmorphism accents, rounded cards, soft shadows, clean typography, smooth page/screen transitions, skeleton loaders, and consistent empty/error states across all screens.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-splash-intro-experience-that-shows-an-animated-quick-delvery-logo-and-then-routes-users-into-authentication-or-the-home-screen-depending-on-session-state",
+      "title": "Implement a Splash / intro experience that shows an animated Quick-Delvery logo and then routes users into authentication or the home screen depending on session state.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-authentication-using-internet-identity-supported-on-internet-computer-and-map-authenticated-principals-to-user-profiles-in-the-backend-include-logout-in-the-profile-section",
+      "title": "Implement authentication using Internet Identity (supported on Internet Computer) and map authenticated principals to user profiles in the backend; include logout in the Profile section.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-location-capture-in-the-browser-a-auto-detect-gps-via-browser-geolocation-and-b-allow-manual-location-entry-as-latitude-longitude-persist-the-user-s-chosen-location-in-their-profile",
+      "title": "Implement location capture in the browser: (a) auto-detect GPS via browser geolocation and (b) allow manual location entry as latitude/longitude; persist the user's chosen location in their profile.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enforce-delivery-service-availability-within-a-15km-radius-of-a-configurable-store-warehouse-coordinate-using-the-haversine-formula-outside-the-radius-show-quick-delvery-is-not-available-in-your-area-yet-and-block-checkout-order-placement",
+      "title": "Enforce delivery/service availability within a 15km radius of a configurable store/warehouse coordinate using the Haversine formula; outside the radius show: \"Quick-Delvery is not available in your area yet\" and block checkout/order placement.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-home-screen-with-category-grid-groceries-fruits-vegetables-dairy-snacks-beverages-personal-care-banner-carousel-for-offers-a-debounced-search-bar-with-suggestion-dropdown-and-sections-for-trending-products-and-recommended-products",
+      "title": "Build the Home screen with: category grid (Groceries, Fruits, Vegetables, Dairy, Snacks, Beverages, Personal Care), banner carousel for offers, a debounced search bar with suggestion dropdown, and sections for trending products and recommended products.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-product-catalog-backend-and-ui-product-listing-page-with-pagination-lazy-loading-category-filtering-and-search-results-product-details-page-with-images-discount-badge-stock-indicator-and-add-to-cart-interactions",
+      "title": "Implement product catalog backend and UI: product listing page with pagination/lazy loading, category filtering, and search results; product details page with images, discount badge, stock indicator, and add-to-cart interactions.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-cart-system-with-add-remove-items-quantity-increase-decrease-controls-and-an-add-to-cart-animation-persist-cart-per-user-session-and-optionally-in-backend-for-authenticated-users",
+      "title": "Implement a cart system with add/remove items, quantity increase/decrease controls, and an add-to-cart animation; persist cart per user session (and optionally in backend for authenticated users).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-coupon-and-pricing-logic-coupon-code-validation-delivery-charge-auto-calculation-tax-calculation-and-a-clear-total-summary-subtotal-discounts-delivery-tax-total",
+      "title": "Implement coupon and pricing logic: coupon code validation, delivery charge auto-calculation, tax calculation, and a clear total summary (subtotal, discounts, delivery, tax, total).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-checkout-flow-with-address-management-create-list-update-delete-addresses-and-payment-option-selection-upi-card-cash-on-delivery-implement-a-payment-simulation-and-create-an-order-on-successful-confirmation",
+      "title": "Create checkout flow with address management (create/list/update/delete addresses) and payment option selection: UPI, Card, Cash on Delivery; implement a payment simulation and create an order on successful confirmation.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-order-success-page-and-order-tracking-ui-with-a-timeline-of-statuses-order-placed-packed-out-for-delivery-delivered-include-an-eta-countdown-timer-and-status-progression-simulation-via-polling",
+      "title": "Implement order success page and order tracking UI with a timeline of statuses: Order Placed → Packed → Out for Delivery → Delivered; include an ETA countdown/timer and status progression simulation via polling.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-order-history-and-profile-sections-list-past-orders-with-details-allow-editing-user-profile-fields-basic-display-saved-addresses-shortcut-and-provide-logout",
+      "title": "Add Order History and Profile sections: list past orders with details, allow editing user profile fields (basic), display saved addresses shortcut, and provide Logout.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-panel-within-the-web-frontend-with-protected-admin-routes-and-role-based-access-control-admin-vs-user-admin-login-via-internet-identity-principal-allowlist-dashboard-analytics-total-users-total-orders-revenue-graph-product-management-add-edit-delete-image-url-category-management-order-management-update-status-user-management-coupon-management-and-delivery-radius-configuration",
+      "title": "Create an Admin Panel within the web frontend with protected admin routes and role-based access control (admin vs user): admin login via Internet Identity principal allowlist, dashboard analytics (total users, total orders, revenue graph), product management (add/edit/delete, image URL), category management, order management (update status), user management, coupon management, and delivery radius configuration.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-in-app-notifications-non-push-for-order-status-updates-and-offer-alerts-backend-stores-notifications-per-user-frontend-shows-a-notifications-list-and-unread-indicator",
+      "title": "Add in-app notifications (non-push) for order status updates and offer alerts: backend stores notifications per user; frontend shows a notifications list and unread indicator.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-seed-data-creation-tooling-via-backend-methods-callable-from-the-admin-ui-initial-categories-sample-products-with-images-sample-banners-offers-and-at-least-one-coupon",
+      "title": "Provide seed data creation tooling via backend methods callable from the admin UI: initial categories, sample products with images, sample banners/offers, and at least one coupon.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-project-documentation-page-in-the-app-or-repository-docs-containing-local-run-instructions-dfx-environment-config-instructions-store-coordinate-radius-admin-allowlist-and-a-deployment-guide-for-internet-computer-canisters",
+      "title": "Add a project documentation page in the app (or repository docs) containing: local run instructions (dfx), environment/config instructions (store coordinate/radius, admin allowlist), and a deployment guide for Internet Computer canisters.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-seed-data-so-the-app-includes-a-larger-realistic-initial-catalog-across-these-categories-groceries-fruits-vegetables-dairy-and-snacks-i-e-seed-many-more-products-than-the-current-small-sample-set",
+      "title": "Expand the seed data so the app includes a larger, realistic initial catalog across these categories: Groceries, Fruits, Vegetables, Dairy, and Snacks (i.e., seed many more products than the current small sample set).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-first-class-product-category-support-in-the-backend-product-model-so-category-filtering-works-correctly-for-seeded-products-and-catalog-browsing",
+      "title": "Add first-class product category support in the backend Product model so category filtering works correctly for seeded products and catalog browsing.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-multiple-offer-banners-and-display-them-in-the-existing-home-banner-carousel-more-than-the-current-3-with-clear-english-titles-subtitles-for-grocery-offers",
+      "title": "Add multiple offer banners and display them in the existing Home banner carousel (more than the current 3), with clear English titles/subtitles for grocery offers.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-coupon-support-beyond-the-current-single-mock-coupon-so-users-can-apply-multiple-coupon-codes-and-ensure-coupons-are-available-visible-to-users-during-cart-checkout",
+      "title": "Add coupon support beyond the current single mock coupon so users can apply multiple coupon codes, and ensure coupons are available/visible to users during cart/checkout.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rename-the-app-brand-from-quick-delvery-to-quick-d-across-the-web-frontend-updating-all-user-facing-text-page-titles-headings-marketing-copy-where-the-brand-name-appears-and-footer-copyright-so-the-brand-is-consistently-shown-as-quick-d",
+      "title": "Rename the app brand from \"Quick-Delvery\" to \"QUICK-D\" across the web frontend, updating all user-facing text (page titles, headings, marketing copy where the brand name appears, and footer copyright) so the brand is consistently shown as \"QUICK-D\".",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-used-in-the-app-ui-with-the-new-combined-quick-d-logo-updating-all-places-that-currently-render-assets-generated-quick-delvery-logo-dim-512x512-png-to-use-the-new-generated-combined-logo-asset-and-ensure-alt-text-uses-quick-d",
+      "title": "Replace the current logo used in the app UI with the new combined QUICK-D logo, updating all places that currently render \"/assets/generated/quick-delvery-logo.dim_512x512.png\" to use the new generated combined logo asset, and ensure alt text uses \"QUICK-D\".",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-new-combined-quick-d-logo-image-file-to-the-frontend-static-assets-under-frontend-public-assets-generated-and-ensure-it-is-used-directly-by-the-frontend-no-backend-routing-for-the-image",
+      "title": "Add the new combined QUICK-D logo image file to the frontend static assets under frontend/public/assets/generated and ensure it is used directly by the frontend (no backend routing for the image).",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "React Native (TypeScript) user mobile app with modern gradient UI, animations, dark mode, and core screens (splash, auth, home, product list/details, cart, checkout, orders, profile)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Authentication system: email/password, mobile OTP (mock), Google OAuth, secure JWT storage, token refresh, logout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Location & delivery radius logic: GPS + manual entry, Haversine distance check, restrict service/orders to within 15km and show unavailable message otherwise",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Product discovery: categories, banner carousel, debounced search with suggestions, trending/recommendations, pagination/lazy loading and image optimization",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Cart & pricing: add-to-cart, quantity controls, remove items, coupon validation, delivery charge + tax calculation, totals summary",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Checkout & addresses: address management, order confirmation/success screens, and payment options (UPI/card/COD) with Razorpay/mock simulation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Orders: create orders, order history, real-time status simulation with timeline (Placed→Packed→Out for Delivery→Delivered) and ETA timer",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Push notifications for order status updates and offers, plus loading/skeletons, empty states, and error handling screens",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Backend REST API (Node.js + Express + TypeScript) with MVC structure, JWT auth, RBAC, bcrypt hashing, validation/sanitization, global error handling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "MongoDB schema design (Users, Products, Categories, Orders, Coupons, Admin, Addresses, Notifications, Payments) with indexing, timestamps, and status enums; include seed data",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Admin panel (React + Vite + Tailwind + Chart.js): secure admin login, dashboard analytics, manage products/categories/orders/users/coupons, configure delivery radius, image upload",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "DevOps/production deliverables: Docker support, .env configuration, CI-ready structure, local run + deployment guides (Render/Railway/AWS), production builds, API documentation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Implement backend data models and persistence in Motoko for: Users (principal-mapped), Products, Categories, Orders, Coupons, Addresses, Notifications (in-app), and Payments (simulated); include validation, indexed lookup patterns where applicable, enums for statuses, timestamps, and structured error handling.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add full initial commerce content: populate categories (Groceries, Fruits, Vegetables, Dairy, Snacks), create offer banners, and create coupons (seeded and available in app/admin)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Branding update: rename app/project to \"QUICK-D\" across mobile/web/admin/backend and replace the logo with a combined/updated logo (update app icons, splash, headers, and any marketing/admin UI references).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Ensure admin has product access/management capabilities (view/add/edit/delete products) via protected admin routes with RBAC.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "QUICK-D",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

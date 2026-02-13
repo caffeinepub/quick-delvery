@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Purple + Green Gradient Theme */
+        --background: 0.98 0.01 280;
+        --foreground: 0.15 0.02 280;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.15 0.02 280;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0.02 280;
+        
+        /* Primary: Rich Purple */
+        --primary: 0.55 0.18 290;
+        --primary-foreground: 0.99 0 0;
+        
+        /* Secondary: Vibrant Green */
+        --secondary: 0.65 0.15 145;
+        --secondary-foreground: 0.99 0 0;
+        
+        --muted: 0.96 0.01 280;
+        --muted-foreground: 0.50 0.02 280;
+        
+        --accent: 0.92 0.02 280;
+        --accent-foreground: 0.15 0.02 280;
+        
+        --destructive: 0.58 0.24 27;
+        --destructive-foreground: 0.99 0 0;
+        
+        --border: 0.90 0.01 280;
+        --input: 0.90 0.01 280;
+        --ring: 0.55 0.18 290;
+        
+        /* Gradient stops */
+        --gradient-purple: 0.55 0.18 290;
+        --gradient-green: 0.65 0.15 145;
+        
+        /* Glassmorphism */
+        --glass-bg: 1 0 0 / 0.7;
+        --glass-border: 1 0 0 / 0.2;
+    }
+
+    .dark {
+        --background: 0.12 0.02 280;
+        --foreground: 0.98 0.01 280;
+        
+        --card: 0.18 0.02 280;
+        --card-foreground: 0.98 0.01 280;
+        
+        --popover: 0.15 0.02 280;
+        --popover-foreground: 0.98 0.01 280;
+        
+        --primary: 0.65 0.20 290;
+        --primary-foreground: 0.98 0 0;
+        
+        --secondary: 0.70 0.18 145;
+        --secondary-foreground: 0.98 0 0;
+        
+        --muted: 0.22 0.02 280;
+        --muted-foreground: 0.65 0.02 280;
+        
+        --accent: 0.28 0.03 280;
+        --accent-foreground: 0.98 0.01 280;
+        
+        --destructive: 0.65 0.22 27;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.25 0.02 280;
+        --input: 0.25 0.02 280;
+        --ring: 0.65 0.20 290;
+        
+        --glass-bg: 0.18 0.02 280 / 0.7;
+        --glass-border: 1 0 0 / 0.1;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+}
+
+@layer utilities {
+    .gradient-purple-green {
+        background: linear-gradient(135deg, oklch(var(--gradient-purple)) 0%, oklch(var(--gradient-green)) 100%);
+    }
+    
+    .gradient-purple-green-radial {
+        background: radial-gradient(circle at top left, oklch(var(--gradient-purple)) 0%, oklch(var(--gradient-green)) 100%);
+    }
+    
+    .glass-card {
+        background: oklch(var(--glass-bg));
+        backdrop-filter: blur(12px);
+        border: 1px solid oklch(var(--glass-border));
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    .animate-slide-up {
+        animation: slideUp 0.4s ease-out;
+    }
+    
+    .animate-scale-in {
+        animation: scaleIn 0.3s ease-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
